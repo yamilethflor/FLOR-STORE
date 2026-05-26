@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLOR Store — Tienda Online</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="flor-store.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     HEADER
+═══════════════════════════════════════ -->
+<header>
+  <div class="logo">FLOR</div>
+  <ul class="nav-links">
+    <li><a onclick="filtrar('todos', this)">Todo</a></li>
+    <li><a onclick="filtrar('mujer', this)">Mujer</a></li>
+    <li><a onclick="filtrar('hombre', this)">Hombre</a></li>
+    <li><a onclick="filtrar('calzado', this)">Calzado</a></li>
+    <li><a onclick="filtrar('accesorios', this)">Accesorios</a></li>
+  </ul>
+  <div class="header-right">
+    <button class="cart-btn" onclick="toggleCart()">
+      🛍️
+      <span class="cart-count" id="cart-count">0</span>
+    </button>
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════════════
+     HERO TIENDA
+═══════════════════════════════════════ -->
+<div class="store-hero">
+  <div>
+    <h1>Tienda <em>FLOR</em></h1>
+    <p>Ropa · Calzado · Accesorios — Colección 2026</p>
+  </div>
+  <div class="store-hero-right">
+    <button class="filtro-btn active" onclick="filtrar('todos', this)">Todos</button>
+    <button class="filtro-btn" onclick="filtrar('mujer', this)">Mujer</button>
+    <button class="filtro-btn" onclick="filtrar('hombre', this)">Hombre</button>
+    <button class="filtro-btn" onclick="filtrar('calzado', this)">Calzado</button>
+    <button class="filtro-btn" onclick="filtrar('accesorios', this)">Accesorios</button>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     PRODUCTOS
+═══════════════════════════════════════ -->
+<div class="store-body">
+  <p class="productos-count">Mostrando <span id="prod-count">15</span> productos</p>
+  <div class="product-grid" id="product-grid"></div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     OVERLAY DEL CARRITO
+═══════════════════════════════════════ -->
+<div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+
+
+<!-- ═══════════════════════════════════════
+     CARRITO LATERAL
+═══════════════════════════════════════ -->
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-header">
+    <div class="cart-title">Tu <span>Carrito</span></div>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+
+  <div class="cart-items" id="cart-items">
+    <div class="cart-empty">
+      <div class="cart-empty-icon">🛍️</div>
+      <p>Tu carrito está vacío</p>
+    </div>
+  </div>
+
+  <div class="cart-footer">
+    <div class="cart-subtotal">
+      <span class="cart-subtotal-label">Subtotal</span>
+      <span class="cart-subtotal-val" id="cart-subtotal">$0</span>
+    </div>
+    <div class="cart-total">
+      <span class="cart-total-label">Total</span>
+      <span class="cart-total-val" id="cart-total">$0</span>
+    </div>
+    <a href="#" id="btn-whatsapp" class="btn-checkout" target="_blank">
+      Pedir por WhatsApp 💬
+    </a>
+    <button class="btn-seguir" onclick="toggleCart()">Seguir comprando</button>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     TOAST NOTIFICACIÓN
+═══════════════════════════════════════ -->
+<div class="toast" id="toast"></div>
+
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<footer>
+  <div class="logo" style="font-size:1.3rem">FLOR</div>
+  <p>&copy; 2026 FLOR — Todos los derechos reservados</p>
+  <p>Contacto: <a href="https://wa.me/573219024318">321 902 4318</a></p>
+</footer>
+
+
+<!-- JS -->
+<script src="flor-store.js"></script>
+
+</body>
+</html>
